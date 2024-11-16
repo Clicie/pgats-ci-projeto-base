@@ -5,43 +5,32 @@ on:
  workflow_dispatch:
 
 jobs:
-
- e2e-testes:
-
-#maquina que o job vai executar
-  runs-on: ['ubuntu-latest']
+ e2e-tests:
+  #maquina que o job vai executar
+   runs-on: ['ubuntu-latest']
 
 # passo a posso das acoes do job
- steps:
+    steps:
 
-   - uses: actions/checkout@v4
+     - uses: actions/checkout@v4
 
    #- users: actions/setup-node@v4
    # with:
    #   node-version: lts/*
 
-   - name: Instalando Yarn
-     run: npm install -g yarn
+    - name: Instalando Yarn
+      run: npm install -g yarn
 
+    - name: Instalando dependências
+      run: yarn
 
-   - name: Instalando dependências
-     run: yarn
+    - name: Instalando Playwright
+      run: yarn playwright install
 
-   - name: Instalando Playwright
-     run: yarn playwright install
+   -  name: Testes E2E (end-to-end)
+      run: yarn run e2e
 
-   - name: Testes E2E (end-to-end)
-     run: yarn run e2e
-
-
-
-
-  #passed, failed, cancelled
-    - name: actions/upload-artifac@v4
-      if: ${{ !cancelled() }}
-      with:
-        name: relatorio-de-testes
-        path: ./playwright-report
+   
 
   
 
