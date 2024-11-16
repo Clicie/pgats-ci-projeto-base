@@ -9,7 +9,7 @@ jobs:
  e2e-testes:
 
 #maquina que o job vai executar
-  runs-on:['ubuntu-latest']
+  runs-on: ['ubuntu-latest']
 
 # passo a posso das acoes do job
  steps:
