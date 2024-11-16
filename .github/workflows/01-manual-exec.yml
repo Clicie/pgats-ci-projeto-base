@@ -12,7 +12,7 @@ jobs:
   runs-on:['ubuntu-latest']
 
 # passo a posso das acoes do job
-  steps:
+ steps:
 
    - uses: actions/checkout@v4
 
@@ -34,4 +34,3 @@ jobs:
      run: yarn run e2e
 
      
-
