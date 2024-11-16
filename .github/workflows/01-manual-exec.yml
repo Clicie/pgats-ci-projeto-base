@@ -6,7 +6,6 @@ workflow_dispatch:
 
 jobs:
 
-#descricao do job
  e2e-testes:
 
 #maquina que o job vai executar
