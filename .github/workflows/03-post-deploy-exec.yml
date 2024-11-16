@@ -37,6 +37,7 @@ on:
       - name: actions/upload-artifac@v4
         if: ${{ !cancelled() }}
         with:
+        
         name: relatorio-de-testes
         path: ./playwright-report
 
